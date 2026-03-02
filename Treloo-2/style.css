@@ -1,0 +1,237 @@
+/* --- Global Resets --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    overflow-x: hidden;
+    line-height: 1.6;
+    background-color: #fff;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* --- Header & Navigation --- */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+    position: relative;
+    z-index: 1000;
+}
+
+.logo a {
+    font-size: 28px;
+    font-weight: 700;
+    color: #3E8278;
+    text-decoration: none;
+}
+
+.nav {
+    display: none; /* Hidden on mobile by default */
+    position: absolute;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    background: #fff;
+    padding: 20px;
+    box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.nav.active {
+    display: block; /* Toggled by JS */
+}
+
+.nav-links {
+    list-style: none;
+    margin-bottom: 20px;
+}
+
+.nav-links li {
+    margin: 15px 0;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+}
+
+.mobile-menu-btn {
+    display: block;
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: #3E8278;
+    cursor: pointer;
+}
+
+/* --- Hero Section --- */
+.hero-section {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.hero-content h1 {
+    font-size: 2rem;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+/* --- Booking Card (The Search Bar) --- */
+.booking-container {
+    padding: 0 20px;
+    margin-top: -30px;
+}
+
+.booking-card {
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+    padding: 20px;
+}
+
+.booking-form {
+    display: flex;
+    flex-direction: column; /* Stacked on mobile */
+    gap: 20px;
+}
+
+.form-section {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.search-btn {
+    background: #3E8278;
+    border: none;
+    padding: 15px;
+    border-radius: 12px;
+    cursor: pointer;
+}
+
+/* --- Grids (Offers & Recommended) --- */
+.bottom-offers, .destination-card-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* 1 column on mobile */
+    gap: 30px;
+    padding: 40px 0;
+}
+
+.offer-card, .destination-card {
+    background: #fff;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+/* --- Travel Section --- */
+.travel-section .container {
+    display: flex;
+    flex-direction: column; /* Stacked on mobile */
+    gap: 40px;
+    padding: 60px 20px;
+}
+
+.travel-image-column {
+    position: relative;
+}
+
+.stat-box {
+    padding: 10px;
+    font-size: 0.8rem;
+}
+
+/* --- Testimonials --- */
+.testimonial-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* --- Banner --- */
+.discount-banner {
+    background: #3E8278;
+    color: #fff;
+    padding: 40px 20px;
+    border-radius: 20px;
+    text-align: center;
+}
+
+/* --- FOOTER --- */
+.footer-content {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.footer-nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+/* -----------------------------------------
+   DESKTOP STYLES (Screen sizes > 768px)
+----------------------------------------- */
+@media (min-width: 768px) {
+    .mobile-menu-btn { display: none; }
+
+    header { padding: 20px 8%; }
+
+    .nav {
+        display: flex;
+        position: static;
+        width: auto;
+        padding: 0;
+        box-shadow: none;
+        background: transparent;
+    }
+
+    .nav-links {
+        display: flex;
+        gap: 30px;
+        margin-bottom: 0;
+    }
+
+    .hero-content h1 { font-size: 3.5rem; }
+
+    .booking-form {
+        flex-direction: row; /* Horizontal on desktop */
+        justify-content: space-between;
+        padding: 10px 30px;
+    }
+
+    .bottom-offers, .destination-card-grid {
+        grid-template-columns: repeat(3, 1fr); /* 3 columns */
+    }
+
+    .travel-section .container {
+        flex-direction: row; /* Side-by-side image and text */
+        align-items: center;
+    }
+
+    .text-column { flex: 1; }
+    .travel-image-column { flex: 1; }
+
+    .testimonial-wrapper {
+        flex-direction: row;
+    }
+}
